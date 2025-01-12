@@ -1,0 +1,7 @@
+### Actualizar el estado de una venta y su fecha segun el id_venta
+PATCH http://localhost:1234/entregas/b6eebc99-9c0b-4ef8-bb6d-6bb9bd380b66
+Content-Type: application/json
+
+{
+    "fecha": "2024-06-07 15:32:14"
+}

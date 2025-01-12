@@ -1,0 +1,44 @@
+#########################################################
+#############  DETALLE PEDIDO APARTADO  #################
+#########################################################
+
+### Recuperar todos los detalles de pedidos apartados
+GET http://localhost:1234/detalle-pedido-apartado
+
+### Recuperar un detalle de pedido apartado por su id_detalle-pedido-apartado
+GET http://localhost:1234/detalle-pedido-apartado/2
+
+### Recuperar detalles de pedidos apartados por id_pedido_apartado
+GET http://localhost:1234/detalle-pedido-apartado/pedido_apartado/1
+
+### Recuperar detalles de pedidos apartados por id_producto
+GET http://localhost:1234/detalle-pedido-apartado/producto/2
+
+### Recuperar detalles de pedidos apartados por id_talla
+GET http://localhost:1234/detalle-pedido-apartado/talla/1
+
+### Crear un detalle de pedido apartado
+POST http://localhost:1234/detalle-pedido-apartado
+Content-Type: application/json
+
+{
+    "id_pedido_apartado": 2,
+    "id_producto": 2,
+    "id_talla": 2,
+    "cantidad": 5
+}
+
+### Actualizar la cantidad de un detalle de pedido apartado
+PATCH http://localhost:1234/detalle-pedido-apartado/1/cantidad
+Content-Type: application/json
+
+{
+    "cantidad": 15
+}
+
+### Eliminar un detalle de pedido apartado
+DELETE http://localhost:1234/detalle-pedido-apartado/2
+
+#########################################################
+#############  FIN DETALLE PEDIDO APARTADO  #############
+#########################################################

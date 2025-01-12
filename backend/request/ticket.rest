@@ -1,0 +1,7 @@
+GET http://localhost:1234/ventas/f5aabc99-9c0b-4ef8-bb6d-6bb9bd380f66
+###
+GET http://localhost:1234/detalle-venta/venta/f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66
+###
+http://localhost:1234/ticket/f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66
+###
+GET http://localhost:1234/productos-stock/1

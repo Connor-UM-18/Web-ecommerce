@@ -1,0 +1,37 @@
+#########################################################
+###############          INVENTARIO        ###############
+#########################################################
+
+### Recuperar todo el inventario
+GET http://localhost:1234/inventario
+
+### Recuperar inventario por id_producto y id_talla
+GET http://localhost:1234/inventario/2/2
+
+### Recuperar inventario por id_talla
+GET http://localhost:1234/inventario/talla/2
+
+### Crear un nuevo registro de inventario
+POST http://localhost:1234/inventario
+Content-Type: application/json
+
+{
+    "id_producto": 2,
+    "id_talla": 2,
+    "stock": 50
+}
+
+### Actualizar el stock de un registro de inventario
+PATCH http://localhost:1234/inventario/1/2/stock
+Content-Type: application/json
+
+{
+    "stock": 70
+}
+
+### Eliminar un registro de inventario
+DELETE http://localhost:1234/inventario/1/2
+
+#########################################################
+###############  FIN    INVENTARIO        ###############
+#########################################################

@@ -1,0 +1,25 @@
+###Obtener todas las categorías (GET)
+GET http://localhost:1234/categorias
+
+###Obtener una categoría por ID (GET)
+GET http://localhost:1234/categorias/1
+
+###Crear una nueva categoría (POST)
+POST http://localhost:1234/categorias
+Content-Type: application/json
+
+{
+    "nombre_categoria": "Travesti"
+}
+
+###Actualizar una categoría existente (PATCH)
+PATCH http://localhost:1234/categorias/5
+Content-Type: application/json
+
+{
+    "nombre_categoria": "Hola"
+}
+
+### Eliminar una categoría (DELETE)
+DELETE http://localhost:1234/categorias/4
+

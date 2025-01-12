@@ -1,0 +1,45 @@
+#########################################################
+###############     DETALLE VENTA         ###############
+#########################################################
+### Recuperar todos los detalles de venta
+GET http://localhost:1234/detalle-venta
+
+### Recuperar un detalle de venta por su id
+GET http://localhost:1234/detalle-venta/2
+
+### Recuperar detalles de venta por id_venta
+GET http://localhost:1234/detalle-venta/venta/f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66
+
+### Recuperar detalles de venta por id_producto
+GET http://localhost:1234/detalle-venta/producto/1
+
+### Recuperar detalles de venta por id_talla
+GET http://localhost:1234/detalle-venta/talla/2
+
+### Crear un detalle de venta
+POST http://localhost:1234/detalle-venta
+Content-Type: application/json
+
+{
+    "id_venta": "f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66",
+    "id_producto": 5,
+    "precio_unitario": 100.50,
+    "cantidad": 40,
+    "id_talla": 4
+}
+
+### Editar un detalle de venta 
+PATCH http://localhost:1234/detalle-venta/1
+Content-Type: application/json
+
+{
+    "precio_unitario": 121.00,
+    "cantidad": 2,
+    "id_talla": 2
+}
+
+### Eliminar un detalle de venta
+DELETE http://localhost:1234/detalle-venta/9
+#########################################################
+###############  FIN DETALLE VENTA        ###############
+#########################################################

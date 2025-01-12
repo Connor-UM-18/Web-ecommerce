@@ -1,0 +1,42 @@
+#########################################################
+###############    PEDIDO APARTADO    ###################
+#########################################################
+
+### Recuperar todos los pedidos apartados
+GET http://localhost:1234/pedido-apartado
+
+### Recuperar un pedido apartado por su id_pedido_apartado
+GET http://localhost:1234/pedido-apartado/1
+
+### Recuperar pedidos apartados por id_usuario
+GET http://localhost:1234/pedido-apartado/usuario/2da0c405-24a2-11ef-ab72-00155dbba9c2
+
+### Recuperar pedidos apartados por estado
+GET http://localhost:1234/pedido-apartado/estado/false
+
+### Recuperar pedidos apartados por fecha
+GET http://localhost:1234/pedido-apartado/fecha/2024-05-08
+
+### Crear un pedido apartado
+POST http://localhost:1234/pedido-apartado
+Content-Type: application/json
+
+{
+    "id_usuario": "4fb2d607-46c4-33ef-cd94-00377eddcb2e",
+    "estado": true
+}
+
+### Actualizar el estado de un pedido apartado
+PATCH http://localhost:1234/pedido-apartado/1/estado
+Content-Type: application/json
+
+{
+    "estado": false
+}
+
+### Eliminar un pedido apartado
+DELETE http://localhost:1234/pedido-apartado/3
+
+#########################################################
+###############    FIN PEDIDO APARTADO  #################
+#########################################################

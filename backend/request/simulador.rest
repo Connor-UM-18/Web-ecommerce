@@ -1,0 +1,17 @@
+
+###Para cambiar los estados 1 a 4:
+PATCH http://localhost:1234/simulador/cambiarEstado4
+Content-Type: application/json
+
+{
+    "id_estado": 4
+}
+
+
+###Para cambiar los estados 1 a 5:
+PATCH http://localhost:1234/simulador/cambiarEstado5/5
+Content-Type: application/json
+
+{
+    "id_estado": 5
+}

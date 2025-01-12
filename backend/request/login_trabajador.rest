@@ -1,0 +1,19 @@
+POST http://localhost:1234/login-trabajador
+Content-Type: application/json
+
+{
+    "usuario": "ArySha",
+    "pass": "12345678"
+}
+###
+POST http://localhost:1234/trabajadores
+Content-Type: application/json
+
+{
+    "usuario": "cassie77",
+    "rol": "gerente",
+    "password": "777",
+    "nombre_completo": "Cassandra Mora",
+    "correo_electronico": "cassie@example.com"
+}
+### Recuperar todos los productos

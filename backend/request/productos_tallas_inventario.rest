@@ -1,0 +1,30 @@
+#########################################################
+###############    PRODUCTOS TALLAS INVENTARIO ##########
+#########################################################
+### Recuperar todos los productos con tallas e inventario
+GET http://localhost:1234/productos-stock
+
+### Recuperar un producto por su id con tallas e inventario
+GET http://localhost:1234/productos-stock/2
+
+### Recuperar productos por nombre con tallas e inventario
+GET http://localhost:1234/productos-stock/nombre/Camiseta Básica
+
+### Recuperar productos por nombre de talla con inventario
+GET http://localhost:1234/productos-stock/talla/M
+
+### Recuperar productos por precio máximo con tallas e inventario
+GET http://localhost:1234/productos-stock/precio/500
+
+### Recuperar productos por id de categoría con tallas e inventario
+GET http://localhost:1234/productos-stock/categoria/1
+
+//aun no queda el de tendencia
+### Recuperar productos por tendencia de ventas (4 más vendidos)
+GET http://localhost:1234/productos-stock/tendencia
+
+#########################################################
+#######     FIN PRODUCTOS TALLAS INVENTARIO    ##########
+#########################################################
+
+

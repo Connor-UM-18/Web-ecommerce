@@ -1,0 +1,412 @@
+#########################################################
+###############          PRODUCTOS        ###############
+#########################################################
+### Recuperar todos los productos
+GET http://localhost:1234/productos
+### Recuperar un producto por su id
+GET http://localhost:1234/productos/2
+### Crear un producto
+POST http://localhost:1234/productos
+Content-Type: application/json 
+
+{
+    "nombre": "Producto X",
+    "descripcion": "Descripcion X",
+    "precio": 999.00,
+    "id_categoria": 2,
+    "imagen_url": "uploads/imagen_1719196913513.png"
+}
+### Editar un producto (pendiente)
+PATCH http://localhost:1234/productos/12
+Content-Type: application/json
+
+{
+    "nombre": "camvio de n",
+    "descripcion": "cambio de d",
+    "precio": 500.00,
+    "id_categoria": 1,
+    "imagen_url": "uploads/imagen_1719196913513.png"
+}
+### Eliminar un producto
+DELETE http://localhost:1234/productos/6
+#########################################################
+###############     FIN PRODUCTOS         ###############
+#########################################################
+#########################################################
+###############    PRODUCTOS TALLAS INVENTARIO ##########
+#########################################################
+### Recuperar todos los productos con tallas e inventario
+GET http://localhost:1234/productos-tallas-inventario
+
+### Recuperar un producto por su id con tallas e inventario
+GET http://localhost:1234/productos-tallas-inventario/id/2
+
+### Recuperar productos por nombre con tallas e inventario
+GET http://localhost:1234/productos-tallas-inventario/nombre/Camiseta Básica
+
+### Recuperar productos por nombre de talla con inventario
+GET http://localhost:1234/productos-tallas-inventario/talla/M
+
+### Recuperar productos por precio máximo con tallas e inventario
+GET http://localhost:1234/productos-tallas-inventario/precio/500
+
+### Recuperar productos por id de categoría con tallas e inventario
+GET http://localhost:1234/productos-tallas-inventario/categoria/1
+#########################################################
+#######     FIN PRODUCTOS TALLAS INVENTARIO    ##########
+#########################################################
+#########################################################
+###############          VENTAS           ###############
+#########################################################
+
+### Recuperar todas las ventas
+GET http://localhost:1234/ventas
+
+### Recuperar una venta por su id_venta
+GET http://localhost:1234/ventas/f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66
+
+### Recuperar ventas por el id_usuario
+GET http://localhost:1234/ventas/usuario/b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22
+
+### Otra prueba para Recuperar ventas por el id_usuario
+GET http://localhost:1234/ventas/usuario/a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+
+### Recuperar ventas por estado (true o false)
+GET http://localhost:1234/ventas/estado/0
+
+### Recuperar ventas por estado (true o false)
+GET http://localhost:1234/ventas/estado/1
+
+### Crear una venta
+POST http://localhost:1234/ventas
+Content-Type: application/json
+
+{
+    "id_usuario": "e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55",
+    "monto": 120.50
+}
+
+### Actualizar una venta (incluyendo id_usuario, monto, fecha, estado)
+PATCH http://localhost:1234/ventas/f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66
+Content-Type: application/json
+
+{
+    "id_usuario": "d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44",
+    "monto": 150.75,
+    "fecha": "2024-06-07 15:32:14",
+    "estado": true
+}
+
+### Eliminar una venta
+DELETE http://localhost:1234/ventas/b1bb5614-24fe-11ef-825d-08bfb8a373be
+
+#########################################################
+###############      FIN    VENTAS        ###############
+#########################################################
+
+#########################################################
+###############          TALLAS           ###############
+#########################################################
+### Recuperar todas las tallas
+GET http://localhost:1234/tallas
+
+### Recuperar una talla por su id_talla
+GET http://localhost:1234/tallas/2
+
+### Crear una talla
+POST http://localhost:1234/tallas
+Content-Type: application/json
+
+{
+    "nombre_talla": "XS"
+}
+
+### Actualizar una talla
+PATCH http://localhost:1234/tallas/2
+Content-Type: application/json
+
+{
+    "nombre_talla": "L"
+}
+
+### Eliminar una talla
+DELETE http://localhost:1234/tallas/1
+
+#########################################################
+###############      FIN    TALLAS        ###############
+#########################################################
+
+#########################################################
+###############          INVENTARIO        ###############
+#########################################################
+
+### Recuperar todo el inventario
+GET http://localhost:1234/inventario
+
+### Recuperar inventario por id_producto y id_talla
+GET http://localhost:1234/inventario/2/2
+
+### Recuperar inventario por id_talla
+GET http://localhost:1234/inventario/talla/2
+
+### Crear un nuevo registro de inventario
+POST http://localhost:1234/inventario
+Content-Type: application/json
+
+{
+    "id_producto": 2,
+    "id_talla": 2,
+    "stock": 50
+}
+
+### Actualizar el stock de un registro de inventario
+PATCH http://localhost:1234/inventario/1/2/stock
+Content-Type: application/json
+
+{
+    "stock": 70
+}
+
+### Eliminar un registro de inventario
+DELETE http://localhost:1234/inventario/1/2
+
+#########################################################
+###############  FIN    INVENTARIO        ###############
+#########################################################
+#########################################################
+###############    PEDIDO APARTADO    ###################
+#########################################################
+
+### Recuperar todos los pedidos apartados
+GET http://localhost:1234/pedido-apartado
+
+### Recuperar un pedido apartado por su id_pedido_apartado
+GET http://localhost:1234/pedido-apartado/1
+
+### Recuperar pedidos apartados por id_usuario
+GET http://localhost:1234/pedido-apartado/usuario/2da0c405-24a2-11ef-ab72-00155dbba9c2
+
+### Recuperar pedidos apartados por estado
+GET http://localhost:1234/pedido-apartado/estado/false
+
+### Recuperar pedidos apartados por fecha
+GET http://localhost:1234/pedido-apartado/fecha/2024-05-08
+
+### Crear un pedido apartado
+POST http://localhost:1234/pedido-apartado
+Content-Type: application/json
+
+{
+    "id_usuario": "4fb2d607-46c4-33ef-cd94-00377eddcb2e",
+    "estado": true
+}
+
+### Actualizar el estado de un pedido apartado
+PATCH http://localhost:1234/pedido-apartado/1/estado
+Content-Type: application/json
+
+{
+    "estado": false
+}
+
+### Eliminar un pedido apartado
+DELETE http://localhost:1234/pedido-apartado/3
+
+#########################################################
+###############    FIN PEDIDO APARTADO  #################
+#########################################################
+#########################################################
+#############  DETALLE PEDIDO APARTADO  #################
+#########################################################
+
+### Recuperar todos los detalles de pedidos apartados
+GET http://localhost:1234/detalle-pedido-apartado
+
+### Recuperar un detalle de pedido apartado por su id_detalle-pedido-apartado
+GET http://localhost:1234/detalle-pedido-apartado/2
+
+### Recuperar detalles de pedidos apartados por id_pedido_apartado
+GET http://localhost:1234/detalle-pedido-apartado/pedido_apartado/1
+
+### Recuperar detalles de pedidos apartados por id_producto
+GET http://localhost:1234/detalle-pedido-apartado/producto/2
+
+### Recuperar detalles de pedidos apartados por id_talla
+GET http://localhost:1234/detalle-pedido-apartado/talla/1
+
+### Crear un detalle de pedido apartado
+POST http://localhost:1234/detalle-pedido-apartado
+Content-Type: application/json
+
+{
+    "id_pedido_apartado": 2,
+    "id_producto": 2,
+    "id_talla": 2,
+    "cantidad": 5
+}
+
+### Actualizar la cantidad de un detalle de pedido apartado
+PATCH http://localhost:1234/detalle-pedido-apartado/1/cantidad
+Content-Type: application/json
+
+{
+    "cantidad": 15
+}
+
+### Eliminar un detalle de pedido apartado
+DELETE http://localhost:1234/detalle-pedido-apartado/2
+
+#########################################################
+#############  FIN DETALLE PEDIDO APARTADO  #############
+#########################################################
+
+#########################################################
+###############        TRABAJADORES        ###############
+#########################################################
+
+### Recuperar todos los trabajadores
+GET http://localhost:1234/trabajadores
+
+### Recuperar un trabajador por su id_trabajador
+GET http://localhost:1234/trabajadores/1
+
+### Recuperar un trabajador por su correo electrónico
+GET http://localhost:1234/trabajadores/email/moni.vi2@example.com
+
+### Crear un trabajador
+POST http://localhost:1234/trabajadores
+Content-Type: application/json
+
+{
+    "usuario": "jperez",
+    "rol": "vendedor",
+    "password": "ContraseniaSegura123",
+    "nombre_completo": "Juan Perez",
+    "correo_electronico": "juan.perez@example.com"
+}
+###
+POST http://localhost:1234/trabajadores
+Content-Type: application/json
+
+{
+    "usuario": "monica32",
+    "rol": "almacenista",
+    "password": "perritos123",
+    "nombre_completo": "Monica Vidente",
+    "correo_electronico": "moni.vi2@example.com"
+}
+### Actualizar un trabajador
+PATCH http://localhost:1234/trabajadores/5
+Content-Type: application/json
+
+{
+    "usuario": "Moni23",
+    "rol": "Vendedor",
+    "password": "NuevaContrasenia456",
+    "nombre_completo": "Monica Vidente Fuentes",
+    "correo_electronico": "mon.lu2001@example.com"
+}
+
+### Eliminar un trabajador 
+DELETE http://localhost:1234/trabajadores/2
+
+#########################################################
+###############      FIN  Trabajador      ###############
+#########################################################
+
+#########################################################
+###############         USUARIOS          ###############
+#########################################################
+
+### Recuperar todos los usuarios
+GET http://localhost:1234/usuarios
+
+### Recuperar un usuario por su id_usuario
+GET http://localhost:1234/usuarios/a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+
+### Recuperar un usuario por su correo electrónico
+GET http://localhost:1234/usuarios/email/maria.gomez@example.com
+
+### Crear un usuario
+POST http://localhost:1234/usuarios
+Content-Type: application/json
+
+{
+    "nombre": "Connor",
+    "apellido": "Mendoza",
+    "correo_electronico": "soyconnor@example.com",
+    "pass": "Tamales18",
+    "telefono": "5613773057"
+}
+
+### Actualizar un usuario
+PATCH http://localhost:1234/usuarios/a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "apellido": "Peredo",
+    "correo_electronico": "juanito.per@example.com",
+    "pass": "contrasenia123",
+    "telefono": "2342342342"
+}
+
+### Eliminar un usuario (PENDIENTE DE IMPLEMENTACIÓN)
+###DELETE http://localhost:1234/usuarios/a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+#########################################################
+###############      FIN    USUARIOS      ###############
+#########################################################
+
+
+#########################################################
+###############     DETALLE VENTA         ###############
+#########################################################
+### Recuperar todos los detalles de venta
+GET http://localhost:1234/detalle-venta
+
+### Recuperar un detalle de venta por su id
+GET http://localhost:1234/detalle-venta/2
+
+### Recuperar detalles de venta por id_venta
+GET http://localhost:1234/detalle-venta/venta/f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66
+
+### Recuperar detalles de venta por id_producto
+GET http://localhost:1234/detalle-venta/producto/1
+
+### Recuperar detalles de venta por id_talla
+GET http://localhost:1234/detalle-venta/talla/2
+
+### Crear un detalle de venta
+POST http://localhost:1234/detalle-venta
+Content-Type: application/json
+
+{
+    "id_venta": "f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66",
+    "id_producto": 5,
+    "precio_unitario": 100.50,
+    "cantidad": 40,
+    "id_talla": 4
+}
+
+### Editar un detalle de venta 
+PATCH http://localhost:1234/detalle-venta/1
+Content-Type: application/json
+
+{
+    "precio_unitario": 120.00,
+    "cantidad": 3,
+    "id_talla": 2
+}
+
+### Eliminar un detalle de venta
+DELETE http://localhost:1234/detalle-venta/5
+#########################################################
+###############  FIN DETALLE VENTA        ###############
+#########################################################
+
+GET  http://localhost:1234/ticket
+
+###Obtener 5 productos mas vendidos
+GET http://localhost:1234/best-sellers/7/2024
+###Obtener 3 categrias mas vendidas por orden
+GET http://localhost:1234/best-categorias/7/2024

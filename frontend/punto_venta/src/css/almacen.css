@@ -1,0 +1,15 @@
+.low-stock {
+    background-color: #ffcccc; /* Rojo claro para stock bajo */
+}
+
+.medium-stock {
+    background-color: #fff0b3; /* Amarillo claro para stock medio */
+}
+
+.high-stock {
+    background-color: #ccffcc; /* Verde claro para stock alto */
+}
+
+.no-stock {
+    background-color: #ff6666; /* Rojo oscuro para stock nulo */
+}

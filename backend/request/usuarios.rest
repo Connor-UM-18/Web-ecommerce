@@ -1,0 +1,42 @@
+#########################################################
+###############         USUARIOS          ###############
+#########################################################
+
+### Recuperar todos los usuarios
+GET http://localhost:1234/usuarios
+
+### Recuperar un usuario por su id_usuario
+GET http://localhost:1234/usuarios/a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+
+### Recuperar un usuario por su correo electrónico
+GET http://localhost:1234/usuarios/email/maria.gomez@example.com
+
+### Crear un usuario
+POST http://localhost:1234/usuarios
+Content-Type: application/json
+
+{
+    "nombre": "Connor",
+    "apellido": "Mendoza",
+    "correo_electronico": "connor.jbszz@gmail.com",
+    "pass": "12345678",
+    "telefono": "5613773057"
+}
+
+### Actualizar un usuario
+PATCH http://localhost:1234/usuarios/a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "apellido": "Peredo",
+    "correo_electronico": "juanito.per@example.com",
+    "pass": "contrasenia123",
+    "telefono": "2342342342"
+}
+
+### Eliminar un usuario 
+DELETE http://localhost:1234/usuarios/e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55
+#########################################################
+###############      FIN    USUARIOS      ###############
+#########################################################

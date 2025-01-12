@@ -1,0 +1,73 @@
+#########################################################
+###############          VENTAS           ###############
+#########################################################
+
+### Recuperar todas las ventas
+GET http://localhost:1234/ventas
+
+### Recuperar una venta por su id_venta
+GET http://localhost:1234/ventas/0ebcb828-db18-452e-8231-76a28c11dfe9
+
+### Recuperar ventas por el id_usuario
+GET http://localhost:1234/ventas/usuario/af8ce9c7-337c-11ef-8690-00e04c368ecb
+
+### Otra prueba para Recuperar ventas por el id_usuario
+GET http://localhost:1234/ventas/usuario/e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55
+
+### Recuperar ventas por estado (id_estado 1, 2 o 3)
+GET http://localhost:1234/ventas/estado/1
+
+### Recuperar ventas por mes y año
+GET http://localhost:1234/ventas/date/7/2024
+
+### Crear una venta
+POST http://localhost:1234/ventas
+Content-Type: application/json
+
+{
+    "id_usuario": "e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55",
+    "monto": 450,
+    "id_estado": 1,
+    "fecha": "2024-06-07 15:32:14"
+}
+
+### Actualizar una venta (incluyendo id_usuario, monto, fecha, id_estado)
+PATCH http://localhost:1234/ventas/f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66
+Content-Type: application/json
+
+{
+    "id_usuario": "e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55",
+    "monto": 150.75,
+    "fecha": "2024-06-07 15:32:14",
+    "id_estado": 2
+}
+
+
+### Eliminar una venta
+DELETE http://localhost:1234/ventas/58aec0a3-374c-11ef-b07d-08bfb8a373be
+
+#########################################################
+###############      FIN    VENTAS        ###############
+#########################################################
+
+### GENERAR UNA NUEVA VENTA
+POST http://localhost:1234/ventas/venta_ecommerce
+Content-Type: application/json
+
+{
+    "id_usuario": "97376864-382c-11ef-89fb-a2aad19a47c0",
+    "total": 450,
+    "es_apartado": true,
+    "productos": [
+        {
+            "id_producto": 1,
+            "id_talla": 1,
+            "cantidad": 2
+        },
+        {
+            "id_producto": 2,
+            "id_talla": 1,
+            "cantidad": 1
+        }
+    ]
+}

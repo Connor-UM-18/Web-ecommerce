@@ -1,0 +1,53 @@
+#########################################################
+###############        TRABAJADORES        ###############
+#########################################################
+
+### Recuperar todos los trabajadores
+GET http://localhost:1234/trabajadores
+
+### Recuperar un trabajador por su id_trabajador
+GET http://localhost:1234/trabajadores/1
+
+### Recuperar un trabajador por su correo electrónico
+GET http://localhost:1234/trabajadores/email/moni.vi2@example.com
+
+### Crear un trabajador
+POST http://localhost:1234/trabajadores
+Content-Type: application/json
+
+{
+    "usuario": "Mariana",
+    "rol": "almacenista",
+    "password": "12345678",
+    "nombre_completo": "Mariana Hugarte",
+    "correo_electronico": "connor181101@gmail.com"
+}
+###
+POST http://localhost:1234/trabajadores
+Content-Type: application/json
+
+{
+    "usuario": "monica32",
+    "rol": "almacenista",
+    "password": "perritos123",
+    "nombre_completo": "Monica Vidente",
+    "correo_electronico": "moni.vi2@example.com"
+}
+### Actualizar un trabajador
+PATCH http://localhost:1234/trabajadores/1
+Content-Type: application/json
+
+{
+    "usuario": "jorgePerez2",
+    "rol": "gerente",
+    "password": "NuevaContrasenia456",
+    "nombre_completo": "Juan Perez Lopez",
+    "correo_electronico": "juan.perez.lopez@example.com"
+}
+
+### Eliminar un trabajador 
+DELETE http://localhost:1234/trabajadores/2
+
+#########################################################
+###############      FIN  Trabajador      ###############
+#########################################################

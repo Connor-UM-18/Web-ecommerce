@@ -1,0 +1,1919 @@
+/*frontend/punto_venta/src/index.css*/
+/*ESTILOS GENERALES*/
+body {
+  font-family: sans-serif, Arial, Helvetica;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+/*----------------------MIS RUTAS----------------------------*/
+.content-principal {
+  background-color: white;
+}
+/*----------------------Banner----------------------------*/
+.bannerIMG img{
+  width: 90%;
+  height: 90%;
+}
+
+/*----------------------CABECERA Y NAV-----------------------*/
+/*ESTILOS CABECERA*/
+.header {
+  font-size: 10px;
+  text-align: center;
+  font-style: italic;
+  margin-left: 100px;
+}
+
+.header-principal {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin-left: 15px;
+}
+
+/* ESTILOS BARRA DE NAVEGACIÓN */
+.nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-right: 100px;
+  block-size: 250%;
+  
+}
+
+.nav li {
+  padding: 20px;
+  position: relative; /* Para posicionar correctamente el dropdown */
+  align-items: stretch;
+}
+
+.nav a {
+  display: block;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: lighter;
+  transition: all 300ms;
+}
+
+.nav a:hover,
+.nav .active {
+  transform: scale(1.1, 1.1);
+  background-color: black;
+  color: #f6f7f9;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+
+.nav button {
+  display: block;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: lighter;
+  transition: all 300ms;
+}
+
+.nav button:hover,
+.nav .active {
+  transform: scale(1.1, 1.1);
+  background-color: black;
+  color: #f6f7f9;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+/* ESTILOS DEL DROPDOWN */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-toggle {
+  background-color: #ffffff; /* Color de fondo azul */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cursor de mano */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer;
+}
+.dropdown-toggle .active {
+  transform: scale(1.1, 1.1);
+  background-color: black;
+  color: #f6f7f9;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+nav .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  position: absolute;
+  top: 117%;
+  left: -12px;
+  padding-right: 5px;
+  padding-left: 5px;
+  background-color: #ffffff; /* Color de fondo del dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra del dropdown */
+  z-index: 1;
+  width: 220px;
+  
+
+}
+
+.dropdown-menu li {
+  padding-top: 30px;
+  border: 1px solid #0000002a;
+  border-left: 1px;
+  border-right: 1px;
+  border-bottom: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-menu li a {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.dropdown-menu li a:hover {
+  background-color: #000000ce;
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  border-radius: 90%;
+}
+
+.dropdown-menu li button {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.dropdown-menu li button:hover {
+  background-color: #000000ce;
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  border-radius: 90%;
+}
+
+/*----------------------ALMACEN-----------------------*/
+.layout {
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "content content content lateral"
+    "content content content lateral"
+    "footer footer footer footer";
+
+  grid-template-rows: 100px 70px auto 70px;
+}
+
+.layout .title-almacen {
+  width: 100%;
+  margin-left: 150px;
+  align-content: center;
+  font-size: 20px;
+}
+
+.precio {
+  font-size: 20px;
+  margin: 1px;
+}
+/*ESTILOS PARA EL CONTENIDO PRINCIPAL*/
+.content {
+  grid-area: content;
+  margin-left: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.peli-item {
+  flex-grow: 1;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+/*
+.layout button,
+input[type="submit"],
+input[type="button"] {
+  width: 100px;
+  background: black;
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 15px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
+}*/
+
+.layout .info {
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  margin-left: 10px;
+  background-color: lightgreen;
+}
+
+.layout .infoMedio {
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  margin-left: 10px;
+  background-color: yellow;
+}
+
+.layout .infoBajo {
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  margin-left: 10px;
+  background-color: red;
+}
+
+.peli-item .delete {
+  background-color: rgb(194, 194, 194);
+  color: black;
+}
+
+.peli-item .edit {
+  margin-right: 7px;
+}
+
+.peli-item .edit:hover {
+  background: white;
+  color: black;
+  border: solid #454545;
+}
+
+.peli-item .delete:hover {
+  background: #9b0202;
+  color: white;
+  border: solid #9b0202;
+}
+
+.peli-item input[type="text"],
+.peli-item input[type="number"],
+.peli-item textarea {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f6f7f9;
+  color: #454545;
+  width: 80%;
+  opacity: 4;
+  outline: 0;
+  border-color: #00000031;
+}
+
+/*ESTILOS PARA LA BARRA LATERAL*/
+
+.lateral {
+  grid-area: lateral;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  margin-right: 150px;
+}
+
+.lateral > div {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 20px;
+  padding: 20px;
+  padding-top: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.lateral input[type="text"],
+.lateral input[type="number"],
+.lateral textarea {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f6f7f9;
+  color: #454545;
+  width: 80%;
+  opacity: 4;
+  outline: 0;
+  border-color: #00000036;
+}
+/*----------------------VENTAS----------------------*/
+.ventas {
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.ventas button {
+  margin-left: 10px;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  border-color: transparent;
+}
+
+/*ESCANEAR*/
+.escanear {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.escanear .escanear-id {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+.escanear .escanear-id input {
+  margin: 0;
+  margin-left: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #f6f7f9;
+  color: #454545;
+  opacity: 4;
+  outline: 0;
+  border-color: transparent;
+}
+
+/*PRODUCTO*/
+.producto {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.producto .producto-datos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  padding: 25px;
+}
+
+/*PRODUCTOS*/
+.section-productos-escaneados,
+.section-escanear,
+.section-producto-escaneado,
+.section-metodo-pago {
+  margin-top: 50px;
+}
+
+.productos-prepago .productos-info {
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 5px;
+}
+
+.productos-prepago .productos-total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.productos-prepago .productos-listado {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.productos-prepago .articulo-prenda{
+  display: flex;
+  flex-direction: row;
+}
+
+/*Metodo de pago*/
+.metodos-pago {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.metodos-pago .card-datos,
+.metodos-pago .cash-datos {
+  flex-grow: 1;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  margin: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/*----------------------FOOTER-----------------------*/
+/*ESTILOS PARA EL PIE DE PAGINA*/
+
+.footer {
+  grid-area: footer;
+
+  background: #d1defa;
+  color: #454545;
+  border-top: 1px solid white;
+  text-align: center;
+  line-height: 68px;
+  padding-left: 25px;
+}
+
+.footer a {
+  color: #0b468a;
+  text-decoration: none;
+}
+
+@media (max-width: 1085px) {
+  .content {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .peli-item {
+    width: 80%;
+  }
+}
+
+.no-encontrado {
+  color: red;
+}
+
+/* ---------------------- Estilos pestaña de Trabajadores ----------------------- */
+
+/* ESTILOS de tabla */
+.tabla-trabajadores {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-trabajadores th,
+.tabla-trabajadores td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-trabajadores th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-trabajadores td {
+  background-color: #fff;
+  color: #333;
+}
+
+.tabla-trabajadores tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ESTILOS de formulario de trabajadores */
+.form-trabajadores {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-trabajadores {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a medida que el ancho del contenedor cambia */
+  justify-content: space-between; /* Espaciado entre los elementos */
+  gap: 10px;
+}
+
+.inputs-trabajadores input[type="text"],
+.inputs-trabajadores input[type="password"],
+.inputs-trabajadores input[type="email"],
+.inputs-trabajadores select {
+  flex: 1; /* Para que los inputs y selectores ocupen todo el espacio disponible */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-trabajadores input[type="text"]:focus,
+.inputs-trabajadores input[type="password"]:focus,
+.inputs-trabajadores input[type="email"]:focus,
+.inputs-trabajadores select:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px; /* Espacio superior para separar los botones del contenido superior */
+  text-align: center; /* Alineación de los botones al centro */
+}
+
+.buttons button {
+  margin: 0 5px; /* Espacio entre los botones */
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+.tabla-trabajadores .accion-buttons {
+  
+  justify-content: space-between; /* Espacio entre los botones */
+}
+
+.tabla-trabajadores .accion-buttons button {
+  padding: 8px 15px;
+  margin-right:  10px; /* Separación de 2px entre botones */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-trabajadores .accion-buttons button.editar {
+  background-color: #ffc107; /* Amarillo */
+  color: #333;
+}
+
+.tabla-trabajadores .accion-buttons button.editar:hover {
+  background-color: #ffca2c; /* Amarillo más claro al pasar el mouse */
+}
+
+.tabla-trabajadores .accion-buttons button.eliminar {
+  background-color: #dc3545; /* Rojo */
+  color: #fff;
+}
+
+.tabla-trabajadores .accion-buttons button.eliminar:hover {
+  background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+}
+/* ---------------------- FIN Estilos pestaña de Trabajadores ----------------------- */
+/* ---------------------- Estilos pestaña de Usuarios ----------------------- */
+
+/* ESTILOS de tabla */
+.tabla-usuarios {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-usuarios th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-usuarios td {
+  background-color: #fff;
+  color: #333;
+}
+
+.tabla-usuarios tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ESTILOS de formulario de usuarios */
+.form-usuarios {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-usuarios {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a medida que el ancho del contenedor cambia */
+  justify-content: space-between; /* Espaciado entre los elementos */
+  gap: 10px;
+}
+
+.inputs-usuarios input[type="text"],
+.inputs-usuarios input[type="password"],
+.inputs-usuarios input[type="email"] {
+  flex: 1; /* Para que los inputs y selectores ocupen todo el espacio disponible */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-usuarios input[type="text"]:focus,
+.inputs-usuarios input[type="password"]:focus,
+.inputs-usuarios input[type="email"]:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px; /* Espacio superior para separar los botones del contenido superior */
+  text-align: center; /* Alineación de los botones al centro */
+}
+
+.buttons button {
+  margin: 0 5px; /* Espacio entre los botones */
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+.tabla-usuarios .accion-buttons {
+  display: flex;
+  justify-content: space-between; /* Espacio entre los botones */
+}
+
+.tabla-usuarios .accion-buttons button {
+  padding: 8px 15px;
+  margin-right: 2px; /* Separación de 2px entre botones */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-usuarios .accion-buttons button.editar {
+  background-color: #ffc107; /* Amarillo */
+  color: #333;
+}
+
+.tabla-usuarios .accion-buttons button.editar:hover {
+  background-color: #ffca2c; /* Amarillo más claro al pasar el mouse */
+}
+
+.tabla-usuarios .accion-buttons button.eliminar {
+  background-color: #dc3545; /* Rojo */
+  color: #fff;
+}
+.tabla-usuarios .accion-buttons button.eliminar:hover {
+  background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+}
+/* ---------------------- FIN Estilos pestaña de Usuarios ----------------------- */
+/* ---------------------- Estilos pestaña de Detalle de Venta ----------------------- */
+
+/* ESTILOS de tabla */
+.tabla-detalle-venta {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-detalle-venta th,
+.tabla-detalle-venta td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-detalle-venta th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-detalle-venta td {
+  background-color: transparent;
+  color: #333;
+}
+
+.tabla-detalle-venta tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ESTILOS de formulario de detalles de venta */
+.form-detalle-venta {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-detalle-venta {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a medida que el ancho del contenedor cambia */
+  justify-content: space-between; /* Espaciado entre los elementos */
+  gap: 10px;
+}
+
+.inputs-detalle-venta input[type="text"],
+.inputs-detalle-venta input[type="number"],
+.inputs-detalle-venta select {
+  flex: 1; /* Para que los inputs y selectores ocupen todo el espacio disponible */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-detalle-venta input[type="text"]:focus,
+.inputs-detalle-venta input[type="number"]:focus,
+.inputs-detalle-venta select:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px; /* Espacio superior para separar los botones del contenido superior */
+  text-align: center; /* Alineación de los botones al centro */
+}
+
+.buttons button {
+  margin: 0 5px; /* Espacio entre los botones */
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+.tabla-detalle-venta .accion-buttons {
+  justify-content: space-between; /* Espacio entre los botones */
+}
+
+.tabla-detalle-venta .accion-buttons button {
+  padding: 8px 15px;
+  margin-right: 10px; /* Separación de 2px entre botones */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-detalle-venta .accion-buttons button.editar {
+  background-color: #ffc1079d; /* Amarillo */
+  color: #333;
+  cursor: not-allowed; /* Muestra que el botón está deshabilitado */
+}
+
+.tabla-detalle-venta .accion-buttons button.editar:hover {
+  background-color: #ffc1079d; /* Amarillo más claro al pasar el mouse */
+}
+
+.tabla-detalle-venta .accion-buttons button.eliminar {
+  background-color: #ff3b3b96; /* Rojo */
+  color: #fff;
+  cursor: not-allowed; /* Muestra que el botón está deshabilitado */
+}
+.tabla-detalle-venta .accion-buttons button.eliminar:hover {
+  background-color: #ff3b3b96; /* Rojo más oscuro al pasar el mouse */
+}
+
+.buttons button.agregar {
+  cursor: not-allowed; /* Muestra que el botón está deshabilitado */
+}
+
+/* ---------------------- FIN Estilos pestaña de Detalle de Venta ----------------------- */
+/* ---------------------- Estilos pestaña de Categorías ----------------------- */
+
+/* ESTILOS de tabla */
+.tabla-categorias {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-categorias th,
+.tabla-categorias td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-categorias th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-categorias td {
+  background-color: #fff;
+  color: #333;
+}
+
+.tabla-categorias tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ESTILOS de formulario de categorías */
+.form-categorias {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-categorias {
+  display: absolute;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inputs-categorias input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-categorias input[type="text"]:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+.tabla-categorias .accion-buttons {
+  justify-content: space-between;
+}
+
+.tabla-categorias .accion-buttons button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-categorias .accion-buttons button.editar {
+  background-color: #ffc107; /* Amarillo */
+  color: #333;
+}
+
+.tabla-categorias .accion-buttons button.editar:hover {
+  background-color: #ffca2c; /* Amarillo más claro al pasar el mouse */
+}
+
+.tabla-categorias .accion-buttons button.eliminar {
+  background-color: #dc3545; /* Rojo */
+  color: #fff;
+}
+
+.tabla-categorias .accion-buttons button.eliminar:hover {
+  background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* ---------------------- FIN Estilos pestaña de Categorías ----------------------- */
+/* ---------------------- Estilos pestaña de Tallas ----------------------- */
+
+/* ESTILOS de tabla */
+.tabla-tallas {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-tallas th,
+.tabla-tallas td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-tallas th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-tallas td {
+  background-color: #fff;
+  color: #333;
+}
+
+.tabla-tallas tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ESTILOS de formulario de tallas */
+.form-tallas {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-tallas {
+  display: absolute;
+  justify-content: center;
+  gap: 10px;
+}
+
+.inputs-tallas input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-tallas input[type="text"]:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+.tabla-tallas .accion-buttons {
+  justify-content: space-between;
+}
+
+.tabla-tallas .accion-buttons button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-tallas .accion-buttons button.editar {
+  background-color: #ffc1079d;
+  color: #333;
+  cursor: not-allowed;
+}
+
+.tabla-tallas .accion-buttons button.editar:hover {
+  background-color: #ffc1079d;
+}
+
+.tabla-tallas .accion-buttons button.eliminar {
+  background-color: #ff3b3b96; /* Rojo */
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.tabla-tallas .accion-buttons button.eliminar:hover {
+  background-color: #ff3b3b96; /* Rojo */
+}
+/* ---------------------- FIN Estilos pestaña de Tallas ----------------------- */
+/* ---------------------- Estilos pestaña de Ventas ----------------------- */
+
+/* ESTILOS de tabla */
+.tabla-ventas {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-ventas th,
+.tabla-ventas td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-ventas th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-ventas td {
+  background-color: #fff;
+  color: #333;
+}
+
+.tabla-ventas tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ESTILOS de formulario de ventas */
+.form-ventas {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-ventas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inputs-ventas input[type="text"],
+.inputs-ventas input[type="datetime-local"],
+.inputs-ventas select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-ventas input[type="text"]:focus,
+.inputs-ventas input[type="datetime-local"]:focus,
+.inputs-ventas select:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+.tabla-ventas .accion-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabla-ventas .accion-buttons button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-ventas .accion-buttons button.editar {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.tabla-ventas .accion-buttons button.editar:hover {
+  background-color: #ffca2c;
+}
+
+.tabla-ventas .accion-buttons button.eliminar {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.tabla-ventas .accion-buttons button.eliminar:hover {
+  background-color: #c82333;
+}
+/* ---------------------- FIN Estilos pestaña de Ventas ----------------------- */
+/* ---------------------- Estilos pestaña de Pedido Apartado ----------------------- */
+
+/* ESTILOS de tabla */
+.tabla-pedido-apartado {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-pedido-apartado th,
+.tabla-pedido-apartado td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-pedido-apartado th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-pedido-apartado td {
+  background-color: #fff;
+  color: #333;
+}
+
+.tabla-pedido-apartado tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ESTILOS de formulario de pedido apartado */
+.form-pedido-apartado {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-pedido-apartado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inputs-pedido-apartado input[type="text"],
+.inputs-pedido-apartado select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-pedido-apartado input[type="text"]:focus,
+.inputs-pedido-apartado select:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+.tabla-pedido-apartado .accion-buttons {
+  justify-content: space-between;
+}
+
+.tabla-pedido-apartado .accion-buttons button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-pedido-apartado .accion-buttons button.editar {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.tabla-pedido-apartado .accion-buttons button.editar:hover {
+  background-color: #ffca2c;
+}
+
+.tabla-pedido-apartado .accion-buttons button.eliminar {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.tabla-pedido-apartado .accion-buttons button.eliminar:hover {
+  background-color: #c82333;
+}
+/* ---------------------- FIN Estilos pestaña de Pedido Apartado ----------------------- */
+/* ---------------------- Estilos pestaña de Detalle Pedido Apartado ----------------------- */
+
+/* ESTILOS de tabla */
+.tabla-detalle-pedido-apartado {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-detalle-pedido-apartado th,
+.tabla-detalle-pedido-apartado td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-detalle-pedido-apartado th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-detalle-pedido-apartado td {
+  background-color: #fff;
+  color: #333;
+}
+
+.tabla-detalle-pedido-apartado tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* ESTILOS de formulario de detalle pedido apartado */
+.form-detalle-pedido-apartado {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-detalle-pedido-apartado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inputs-detalle-pedido-apartado input[type="number"],
+.inputs-detalle-pedido-apartado select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-detalle-pedido-apartado input[type="number"]:focus,
+.inputs-detalle-pedido-apartado select:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+.tabla-detalle-pedido-apartado .accion-buttons {
+  justify-content: space-between;
+}
+
+.tabla-detalle-pedido-apartado .accion-buttons button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-detalle-pedido-apartado .accion-buttons button.editar {
+  background-color: #ffc1079d;
+  color: #333;
+  cursor: not-allowed; /* Muestra que el botón está deshabilitado */
+}
+
+.tabla-detalle-pedido-apartado .accion-buttons button.editar:hover {
+  background-color: #ffc1079d;
+}
+
+.tabla-detalle-pedido-apartado .accion-buttons button.eliminar {
+  background-color: #ff3b3b96;
+  color: #fff;
+  cursor: not-allowed; /* Muestra que el botón está deshabilitado */
+}
+
+.tabla-detalle-pedido-apartado .accion-buttons button.eliminar:hover {
+  background-color: #ff3b3b96;
+}
+/* ---------------------- FIN Estilos pestaña de Detalle Pedido Apartado ----------------------- */
+/* ---------------------- Estilos pestaña de Reportes ----------------------- */
+
+/* ESTILOS de formulario de reportes */
+.form-reportes {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.inputs-reportes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inputs-reportes select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputs-reportes select:focus {
+  border-color: #333;
+}
+
+.buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #333;
+}
+
+/* ESTILOS de tabla de reportes */
+.tabla-reportes {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 6px #ddd;
+}
+
+.tabla-reportes th,
+.tabla-reportes td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-reportes th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-reportes td {
+  background-color: #fff;
+  color: #333;
+}
+
+.tabla-reportes tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Estilo del total de ventas */
+.total-ventas {
+  width: 80%;
+  margin: 20px auto;
+  padding: 15px;
+  text-align: right;
+  font-size: 1.2em;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+.chart-container {
+  width: 30%;
+  margin: 0 auto; /* Centra el gráfico horizontalmente */
+  text-align: center; /* Centra el título del gráfico */
+}
+.chart-container2 {
+  padding-top: 90px;
+  width: 30%;
+  margin: 0 auto; /* Centra el gráfico horizontalmente */
+  text-align: center; /* Centra el título del gráfico */
+}
+
+.chart-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.charts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    width: 80%; /* Ajusta el tamaño para pantallas más pequeñas */
+  }
+}
+
+/* ---------------------- Estilos para el componente Producto ----------------------- */
+
+.producto2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  background-color: #fff;
+}
+
+.producto2 img {
+  width: 100%;
+  max-width: 130px;
+  border-radius: 10px;
+  max-height: 150px;
+}
+
+.producto-datos2 {
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  top: 0px; 
+}
+
+.producto-datos2 h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.producto-datos2 p {
+  margin-top: 10px;
+  color: #555;
+}
+
+.producto-datos2 label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.producto-datos2 select,
+.producto-datos2 input {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.producto-datos2 select:focus,
+.producto-datos2 input:focus {
+  border-color: #333;
+}
+
+.producto-datos2 button {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.producto-datos2 button:hover {
+  background-color: #333;
+}
+
+/* ---------------------- FIN Estilos para el componente Producto ----------------------- */
+/* ---------------------- Estilos para el componente Escanear ----------------------- */
+
+.escanear2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px #ddd;
+  background-color: #fff;
+}
+
+.escanear2 h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.escanear-id2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.escanear-id2 .inputBuscador {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; /* Espacio entre el input y el botón */
+  border-radius: 5px;
+  border: 2px solid #ccc; /* Borde más visible */
+  background: #f6f7f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.escanear-id2 .inputBuscador:focus {
+  border-color: #333;
+}
+
+.buttonescaner2{
+  width: 20%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttonescaner2:hover {
+  background-color: #333;
+}
+
+/* ---------------------- FIN Estilos para el componente Escanear ----------------------- */
+/* ---------------------- Estilos pestaña de Entregas ----------------------- */
+
+.entregas {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.entregas h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.entregas-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-entrega {
+  width: 25%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.input-buscador {
+  width: 25%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.input-entrega:focus {
+  border-color: #333;
+}
+
+.boton-entrega {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-entrega:hover {
+  background-color: #218838;
+}
+
+.mensaje-entrega {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* ---------------------- FIN Estilos pestaña de Entregas ----------------------- */
+/* Estilos para el botón deshabilitado */
+.buttonEditarCopy:disabled {
+  background-color: #303030c0; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  cursor: not-allowed; /* Cursor que indica que el botón está deshabilitado */
+  opacity: 0.7; /* Opacidad para indicar que está deshabilitado */
+}
+.buttonEditarCopy {
+  width: 100px;
+  background: black;
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 15px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.buttonEditarCopy:hover {
+  background-color: #000000c0; /* Color de fondo */
+  color: #fff; /* Color del texto */
+}
+
+.button-buscador{
+  width: 100px;
+  background: black;
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 15px;
+  margin-right: 2px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.button-buscador:hover {
+  background-color: #000000c0; /* Color de fondo */
+  color: #fff; /* Color del texto */
+}
+
+.button-borrador{
+  width: 100px;
+  background: rgb(151, 16, 16);
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 15px;
+  margin-left: 5px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.button-borrador:hover {
+  background-color: #7a1313c9; /* Color de fondo */
+  color: #fff; /* Color del texto */
+}
+
+/* frontend/src/components/reportes/Reportes.css */
+.best-sellers {
+  margin: 20px auto;
+  width: 80%;
+}
+
+.best-sellers h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.best-sellers ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.best-sellers li {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+}
+
+.best-sellers img {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para la sección de las categorías más vendidas */
+.best-categorias {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.best-categorias h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.best-categorias ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.best-categorias li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.best-categorias .precio {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.cantidad-venta {
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.talla-venta {
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
